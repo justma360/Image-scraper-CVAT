@@ -34,13 +34,13 @@ if __name__ == "__main__":
     webdriver_path = os.path.normpath(
         os.path.join(os.getcwd(), "webdriver", webdriver_executable())
     )
-    image_path = os.path.normpath(os.path.join(os.getcwd(), "photos"))
+    image_path = os.path.normpath(os.path.join(os.getcwd(), "data\images"))
 
     # Add new search key into array ["cat","t-shirt","apple","orange","pear","fish"]
-    search_keys = list(set(["hoverboard"]))
+    search_keys = list(set(["skateboard"]))
 
     # Parameters
-    number_of_images = 5000  # Desired number of images
+    number_of_images = 5  # Desired number of images
     headless = True  # True = No Chrome GUI
     min_resolution = (0, 0)  # Minimum desired image resolution
     max_resolution = (9999, 9999)  # Maximum desired image resolution
