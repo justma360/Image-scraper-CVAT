@@ -1,80 +1,52 @@
-# Python Project Template
+# Google Image Scraper
 
-## About The Project
+A library created to scrape Google Images.<br>
+If you are looking for other image scrapers, JJLimmm has created image scrapers for Gettyimages, Shutterstock, and Bing. <br>
+Visit their repo here: https://github.com/JJLimmm/Website-Image-Scraper
 
-This is a template that uses both Conda and Pre-commit, to ensure that everyone in the team has the same environment running on their device.
+## Pre-requisites
 
-Pre-commit is used to ensure that certain commit standards are enforced.
+1. Google Chrome
+1. Selenium (pip install Selenium)
+1. Pillow (pip install Pillow)
 
-## Built With
+## Setup
 
-[![python][python3.8.13-shield]][python3.8.13-url]
-[![conda][conda-forge-shield]][conda-forge-url]
-
-This template is primary focused on Python 3.8.13 with Anaconda (using Conda-forge)
-
-# Getting Started
-
-## Prerequisites
-
-- Python 3.8.13
-- Anaconda
-
-## Installation
-
-Below is instruction on how to install the custom Conda Environment
-
-1. Open the folder directory in CMD / Terminal and Run the file below
+1. Open command prompt
+2. Clone this repository (or [download](https://github.com/ohyicong/Google-Image-Scraper/archive/refs/heads/master.zip))
    ```
-   setup_env.bat
+   git clone https://github.com/ohyicong/Google-Image-Scraper
    ```
-2. You will be prompted to enter the `<env_name>`, please select a suitable name and ensure that the environment does not already exist
-3. The environment will be installed and `pre-commit` will also be installed.
-4. The env comes with the below as standard
-   1. numpy
-   2. pandas
-   3. pycrypto
-   4. pre-commit - installed and applied after via command line
-
-## Flow
-
-To effectively use the template you have to ensure that:
-
-1. Conda environment is active when using python
+3. Install Dependencies
    ```
-   conda activate <env_name>
+   pip install -r requirements.txt
    ```
-2. pre-commit is installed
+4. Edit your desired parameters in main.py
    ```
-   pre-commit install
+   search_keys         = Strings that will be searched for
+   number of images    = Desired number of images
+   headless            = Chrome GUI behaviour. If True, there will be no GUI
+   min_resolution      = Minimum desired image resolution
+   max_resolution      = Maximum desired image resolution
+   max_missed          = Maximum number of failed image grabs before program terminates. Increase this number to ensure large queries do not exit.
+   number_of_workers   = Number of sectioned jobs created. Restricted to one worker per search term and thread.
+   ```
+5. Run the program
+   ```
+   python main.py
    ```
 
-## Working as a team with Git
+## Usage
 
-1. Each person should create your branch according to feature (`git checkout -b feature/AmazingNewFeature`)
-2. Add your changes (`git add -A`)
-3. Commit your Changes (`git commit -a 'prefix: informative commit message'`)
-   ```
-   prefix must follow the following
-   build | ci | docs | feat | fix | perf | refactor | style | test | chore | revert | bump
-   ```
-4. Push to the Branch (`git push`)
-5. Open a Pull Request (PR) on GitHub to develop / main
+This project was created to bypass Google Chrome's new restrictions on web scraping from Google Images.
+To use it, define your desired parameters in main.py and run through the command line:
 
-# Roadmap
+```
+python main.py
+```
 
-## Features
+## IMPORTANT
 
-- [ ] Implement **init**.py into template
-- [ ] Add more custom utils
-- [ ] Convert to flask server
-- [ ] Add docker compile template
+Although it says so in the video, this program will not run through VSCode. It must be run in the command line.
 
-## Bugs
-
-None?
-
-[python3.8.13-shield]: https://img.shields.io/badge/Python-3.8.13-brightgreen
-[python3.8.13-url]: https://www.python.org/downloads/release/python-3813/
-[conda-forge-shield]: https://img.shields.io/conda/dn/conda-forge/python?label=Anaconda
-[conda-forge-url]: https://www.anaconda.com/products/distribution
+This program will install an updated webdriver automatically. There is no need to install your own.
