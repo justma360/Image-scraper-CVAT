@@ -49,6 +49,7 @@ similarity.py
 3. Resets index for all the missing files
 
 ### CVAT Server
+**Note** If starting on a new computer all previous data will be lost (unless you migrate the docker containers) as the data is stored in the DOCKER containers.
 
 1. Start CVAT server and connect to `http://localhost:8080/`
 2. Create an account (Enter random details unless hosted on server)
@@ -61,7 +62,9 @@ similarity.py
    - Name: Label object to be labelled
    - Select files: select files from google downloaded `photos/<object>`
    - Config the Advance Config as below
+
      ![create_task](md\images\create_task.png)
+
      ![create_task_config](md\images\create_task_config.png)
 5. Click on `Job #<number>` to enter the job and start labeling
 6. Labeling keyshortcuts
@@ -69,3 +72,8 @@ similarity.py
    - F: Next
    - N: New box (2 points)
 7. Press Save -> Export Job Data Set -> Export as Yolo Format
+
+
+# Notes
+1. The server is hosted on Docker container, the information regarding the server is stored in the container.
+2. Data should be exported when finished.

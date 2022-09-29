@@ -2,13 +2,21 @@ import sys
 import logging
 
 from hashlib import md5
+from tabnanny import verbose
 from Crypto.Cipher import AES
 from dotenv import dotenv_values
 
 config = dotenv_values(".env")
+
+try:
+    VERBOSE_LEVEL = int(config["VERBOSE"])
+except Exception as e:
+    print("No .env file given")
+    VERBOSE_LEVEL = 4
+
 logging.basicConfig(
     format="%(asctime)s | %(levelname)s: %(message)s",
-    level=int(config["VERBOSE"]),
+    level=VERBOSE_LEVEL,
     stream=sys.stdout,
 )
 

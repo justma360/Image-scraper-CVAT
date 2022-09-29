@@ -10,6 +10,7 @@ import os
 import concurrent.futures
 from GoogleImageScraper import GoogleImageScraper
 from patch import webdriver_executable
+import utils.input_args
 
 
 def worker_thread(search_key):
@@ -30,6 +31,8 @@ def worker_thread(search_key):
 
 
 if __name__ == "__main__":
+    args = utils.input_args.parse_arguments()
+    print(args.search)
     # Define file path
     webdriver_path = os.path.normpath(
         os.path.join(os.getcwd(), "webdriver", webdriver_executable())
@@ -37,10 +40,10 @@ if __name__ == "__main__":
     image_path = os.path.normpath(os.path.join(os.getcwd(), "data\images"))
 
     # Add new search key into array ["cat","t-shirt","apple","orange","pear","fish"]
-    search_keys = list(set(["skateboard"]))
+    search_keys = list(set(["e-scooter", "electric unicycle", "electric hoverboard"]))
 
     # Parameters
-    number_of_images = 5  # Desired number of images
+    number_of_images = 3000  # Desired number of images
     headless = True  # True = No Chrome GUI
     min_resolution = (0, 0)  # Minimum desired image resolution
     max_resolution = (9999, 9999)  # Maximum desired image resolution
