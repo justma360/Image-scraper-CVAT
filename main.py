@@ -40,7 +40,7 @@ if __name__ == "__main__":
     image_path = os.path.normpath(os.path.join(os.getcwd(), "data\images"))
 
     # Add new search key into array ["cat","t-shirt","apple","orange","pear","fish"]
-    search_keys = list(set(["e-scooter", "electric unicycle", "electric hoverboard"]))
+    search_keys = list(set(args.search))
 
     # Parameters
     number_of_images = 3000  # Desired number of images
