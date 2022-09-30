@@ -54,7 +54,20 @@ def parse_arguments():
         default=[],
         help="List of search items",
     )
-
+    parser.add_argument(
+        "-n",
+        metavar="--number_images",
+        required=False,
+        default=5,
+        help="List of search items",
+    )
+    parser.add_argument(
+        "-miss",
+        metavar="--max_miss",
+        required=False,
+        default=1000000000000000000000000,
+        help="List of search items",
+    )
     args = parser.parse_args()
 
     verbose = {
@@ -70,5 +83,7 @@ def parse_arguments():
         stream=sys.stdout,
     )
     logging.info(f"Logging level is at {args.v}")
+
+    args.search = [terms.replace("_", " ").strip() for terms in args.search]
 
     return args
