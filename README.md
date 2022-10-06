@@ -19,9 +19,15 @@ python main.py --search <search_terms> -n <no.images> -miss <no_skips>
 ```
 
 ### CVAT
+To get the host IP
+```cmd
+ipconfig
+IPv4 Address = <IP>
+```
 To create the labeling web server use the command
 ```
-docker-compose up
+set CVAT_HOST=<IP>
+docker-compose up -d
 ```
 
 Connect to the following link to start labeling ([localhost:3950](http://localhost:3950))
