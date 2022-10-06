@@ -1,4 +1,4 @@
-# Google Image Scraper
+# Image-Scraper-CVAT Combo
 
 A library created to scrape Google Images. Credits to [ohyicong](https://github.com/ohyicong) for the Google Image Scraper Repo. You can download the original [here](https://github.com/ohyicong/Google-Image-Scraper/archive/refs/heads/master.zip)
 
@@ -10,6 +10,7 @@ A library created to scrape Google Images. Credits to [ohyicong](https://github.
 
 ## Usage
 
+### Image Scraper (based on [Google Image Scraper](https://github.com/ohyicong/Google-Image-Scraper/archive/refs/heads/master.zip))
 This project was created to bypass Google Chrome's new restrictions on web scraping from Google Images.
 To use it, define your desired parameters in main.py and run through the command line:
 
@@ -17,6 +18,16 @@ To use it, define your desired parameters in main.py and run through the command
 python main.py --search <search_terms> -n <no.images> -miss <no_skips>
 ```
 
+### CVAT
+To create the labeling web server use the command
+```
+docker-compose up
+```
+
+Connect to the following link to start labeling ([localhost:3950](http://localhost:3950))
+```
+localhost:3950
+```
 
 
 ## Setup
