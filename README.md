@@ -12,34 +12,43 @@ A library created to scrape Google Images. Credits to [ohyicong](https://github.
 
 ### Image Scraper (based on [Google Image Scraper](https://github.com/ohyicong/Google-Image-Scraper/archive/refs/heads/master.zip))
 This project was created to bypass Google Chrome's new restrictions on web scraping from Google Images.
-To use it, define your desired parameters in main.py and run through the command line:
 
+To use it, define your desired parameters in main.py and run through the command line, searches with a space in the middle should have an underscore.
 ```
 python main.py --search <search_terms> -n <no.images> -miss <no_skips>
 ```
 
 ### CVAT
+
+1. CD into cvat directory
+2. Get your current IP or use default localhost:3950
+
 To get the host IP
 ```cmd
 ipconfig
 IPv4 Address = <IP>
 ```
-To create the labeling web server use the command
+
+3. To create the labeling web server use the command, this will allow you to set a custom URL (eg current WAN IP (123.321.12.21) or if not set it will use the default local host as shown below)
 ```
 set CVAT_HOST=<IP>
+```
+
+To start up the docker container use the command
+```
 docker-compose up -d
 ```
 
-Connect to the following link to start labeling ([localhost:3950](http://localhost:3950))
+Connect to the set IP (or default) to start labeling ([localhost:3950](http://localhost:3950))
 ```
 localhost:3950
 ```
 
 
-## Setup
+## Setup for image scraper
 
-1. Open command prompt
-2. Install Dependencies (**Bash Script**)
+1. Open command prompt at the current repo
+2. Install Dependencies using (**Bash Script**)
    ```
    setup/pip_setup_venv.bat
    ```

@@ -47,7 +47,7 @@ def parse_arguments():
         help="Prints the current directory",
     )
     parser.add_argument(
-        "-search",
+        "--search",
         metavar="--search",
         nargs="+",
         required=True,
