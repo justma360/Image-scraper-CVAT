@@ -66,3 +66,7 @@ localhost:3950
    max_missed          = Maximum number of failed image grabs before program terminates. Increase this number to ensure large queries do not exit.
    number_of_workers   = Number of sectioned jobs created. Restricted to one worker per search term and thread.
    ```
+4. To search the desired "SEARCH_1" and "SEARCH_2" for 100 images the run code is below
+   ```
+   python main.py --search SEARCH_1 SEARCH _2 -n 100
+   ```
